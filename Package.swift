@@ -13,12 +13,10 @@ let package = Package(
         .target(name: "libplzma",
                 path: "src",
                 cSettings: [
-                    .define("LIBPLZMA_VERSION_BUILD", to: "1448"),
-                    .unsafeFlags(["-fPIC"])
+                    .define("LIBPLZMA_VERSION_BUILD", to: "1448")
                 ],
                 cxxSettings: [
-                    .define("LIBPLZMA_VERSION_BUILD", to: "1448"),
-                    .unsafeFlags(["-fPIC", "-fno-rtti"])
+                    .define("LIBPLZMA_VERSION_BUILD", to: "1448")
                 ]),
         .target(name: "PLzmaSDK",
                 dependencies: [
@@ -29,13 +27,7 @@ let package = Package(
                     .copy("../resources/PrivacyInfo.xcprivacy"),
                 ]),
         .target(name: "plzma_test_files",
-                path: "test_files",
-                cSettings: [
-                    .unsafeFlags(["-fPIC"])
-                ],
-                cxxSettings: [
-                    .unsafeFlags(["-fPIC", "-fno-rtti"])
-                ]),
+                path: "test_files"),
         .testTarget(
             name: "PLzmaSDKTests",
             dependencies: [
